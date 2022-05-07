@@ -37,7 +37,8 @@ class LoginScreen extends StatelessWidget {
                 ),
                 child: Text('Crear una nueva cuenta', style: TextStyle( fontSize: 18, color: Colors.black87 ),)
               ),
-            SizedBox( height: 50 )
+            SizedBox( height: 50 ),
+            
           ]),
           
         ),
