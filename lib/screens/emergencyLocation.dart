@@ -35,11 +35,15 @@ class EmergencyLocation extends StatelessWidget {
               
               children: emergency.emergenciesLocation.map((box) {
                 return Container(
-                    margin: const EdgeInsets.all(5),
-                    color: Colors.white,
+                    margin: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                     
+                    ),
                     alignment: Alignment.center,
-                    height: 130,
-                    width: 100,
+                    height: 140,
+                    width: 140,
                     child: Column(
                       children: [
                         IconButton(
@@ -47,7 +51,7 @@ class EmergencyLocation extends StatelessWidget {
                           iconSize: 75,
                           onPressed: () {},
                         ),
-                         Text(box.nombre)
+                         Text(box.nombre, textAlign: TextAlign.center)
                       ],
                     ));
               }).toList(),

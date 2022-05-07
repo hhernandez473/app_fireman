@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
 
     final emergency = Provider.of<EmergencyTypeService>(context);
     print(emergency.emergenciesType);
-    if( emergency.isLoading ) return LoadingScreen();
+    if (emergency.isLoading) return LoadingScreen();
     List boxes = ["box1", "box2", "box3", "box4", "box5", "box6"];
     return Scaffold(
         appBar: AppBar(
@@ -31,25 +31,30 @@ class HomeScreen extends StatelessWidget {
             alignment: Alignment.topCenter,
             padding: const EdgeInsets.all(15),
             child: Wrap(
-              
               children: emergency.emergenciesType.map((box) {
                 return Container(
-                    margin: const EdgeInsets.all(5),
-                    color: Colors.white,
+                    margin: const EdgeInsets.all(10),
+                   
                     alignment: Alignment.center,
-                    height: 130,
-                    width: 100,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                     
+                    ),
+                    height: 140,
+                    width: 140,
                     child: Column(
                       children: [
                         IconButton(
-                          icon: Image.asset('assets/images/'+box.img),
+                          icon: Image.asset('assets/images/' + box.img),
                           iconSize: 75,
                           onPressed: () {
-                            final route = MaterialPageRoute(builder: (context) =>    EmergencyLocation());
+                            final route = MaterialPageRoute(
+                                builder: (context) => EmergencyLocation());
                             Navigator.push(context, route);
                           },
                         ),
-                         Text(box.nombre)
+                        Text(box.nombre, textAlign: TextAlign.center,)
                       ],
                     ));
               }).toList(),

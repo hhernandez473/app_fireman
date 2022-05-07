@@ -12,7 +12,8 @@ class AppState extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: ( _ ) => AuthService() ),
-        
+        ChangeNotifierProvider(create: ( _ ) => EmergencyTypeService() ),
+         ChangeNotifierProvider(create: ( _ ) => EmergencyLocationService() ),
       ],
       child: MyApp(),
     );
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         'checking': (_) => CheckAuthScreen(),
        
         'home': (_) => HomeScreen(),
-
+        'emergencyLocation': (_) => EmergencyLocation(),
         'login': (_) => LoginScreen(),
         'register':  (_) => RegisterScreen(),
       },
