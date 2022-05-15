@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
     final emergency = Provider.of<EmergencyTypeService>(context);
     print(emergency.emergenciesType);
     if (emergency.isLoading) return LoadingScreen();
-    List boxes = ["box1", "box2", "box3", "box4", "box5", "box6"];
+    
     return Scaffold(
         appBar: AppBar(
           title: const Text('Menu Principal'),
@@ -49,6 +49,7 @@ class HomeScreen extends StatelessWidget {
                           icon: Image.asset('assets/images/' + box.img),
                           iconSize: 75,
                           onPressed: () {
+                            emergency.saveTypeEmergency(box.uid, box.nombre);
                             final route = MaterialPageRoute(
                                 builder: (context) => EmergencyLocation());
                             Navigator.push(context, route);

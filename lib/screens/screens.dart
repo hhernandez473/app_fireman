@@ -8,3 +8,7 @@ export 'package:app_fireman/screens/emergencyLocation.dart';
 
 
 
+export  'package:app_fireman/screens/mapa_page.dart';
+
+export 'package:app_fireman/screens/confirmation_screen.dart';
+

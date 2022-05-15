@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class EmergencyLocation extends StatelessWidget {
+  
+
   @override
   Widget build(BuildContext context) {
     final authService = Provider.of<AuthService>(context, listen: false);
@@ -49,7 +51,13 @@ class EmergencyLocation extends StatelessWidget {
                         IconButton(
                           icon: Image.asset('assets/images/'+box.img),
                           iconSize: 75,
-                          onPressed: () {},
+                          onPressed: () {
+                            emergency.saveLocationEmergency(box.uid, box.nombre);
+                             final route = MaterialPageRoute(
+                                builder: (context) => MapaPage());
+                            
+                            Navigator.push(context, route);
+                          },
                         ),
                          Text(box.nombre, textAlign: TextAlign.center)
                       ],
