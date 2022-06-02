@@ -55,6 +55,7 @@ class AuthService extends ChangeNotifier {
       // Token hay que guardarlo en un lugar seguro
       decodedResp['idToken'];
       await storage.write(key: 'token', value: decodedResp['token']);
+       await storage.write(key: 'userId', value: decodedResp['usuario']['uid']);
       //print(decodedResp);
       return null;
     } else {

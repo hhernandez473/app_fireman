@@ -30,7 +30,13 @@ class _HeaderIcon extends StatelessWidget {
       child: Container(
         width: double.infinity,
         margin: EdgeInsets.only( top: 30 ),
-        child: Icon( Icons.medical_services, color: Colors.white, size: 100 ),
+        child:  IconButton(
+                          icon: Image.asset('assets/images/logo_size.png'),
+                          iconSize: 200,
+                          onPressed: () {
+                         
+                          },
+                        ),
       ),
     );
   }
@@ -59,8 +65,8 @@ class _Purple_box extends StatelessWidget {
 
   BoxDecoration _PurpleBackground() => BoxDecoration(
           gradient: LinearGradient(colors: [
-       Color.fromRGBO(63, 63, 156, 1),
-        Color.fromRGBO(90, 70, 178, 1)
+       Color.fromARGB(255, 250, 14, 14),
+        Color.fromARGB(255, 229, 11, 22)
       ]));
 }
 

@@ -7,10 +7,12 @@ class LoadingScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Emergencias'),
+         backgroundColor: const Color.fromARGB(255, 194, 37, 45),
       ),
       body: Center(
         child: CircularProgressIndicator(
           color: Colors.indigo,
+          
         ),
      ),
    );

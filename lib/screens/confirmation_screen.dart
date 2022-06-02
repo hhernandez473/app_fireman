@@ -20,6 +20,7 @@ class ConfirmationScreen extends StatelessWidget {
         appBar: AppBar(
           title: const Text('Confirmación'),
           shadowColor: Colors.deepPurple,
+           backgroundColor: const Color.fromARGB(255, 194, 37, 45),
           actions: [
             IconButton(
               icon: const Icon(Icons.login_outlined),

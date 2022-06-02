@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 
 class EmergencyTypeService extends ChangeNotifier {
   final String _baseUrl = 'https://server-rest-emergencias.herokuapp.com';
-
+  final storage = new FlutterSecureStorage();
   final encoding = Encoding.getByName('utf-8');
   final headers = {'Content-Type': 'application/json'};
   bool isLoading = true;
@@ -40,6 +40,15 @@ class EmergencyTypeService extends ChangeNotifier {
     } else {
       return decodedResp['msg'];
     }
+  }
+
+  Future<String?> saveTypeEmergency(String id_type, String description) async {
+   
+     await storage.write(key: 'emergencyType', value: id_type);
+     await storage.write(key: 'dscr_type', value: description);
+    // String value  =await   storage.read(key: 'emergencyType') as String;
+    // print(value);
+     return null;
   }
 }
 

@@ -19,6 +19,7 @@ class MapaPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Ubicación de Emergencia'),
         shadowColor: Colors.deepPurple,
+         backgroundColor: const Color.fromARGB(255, 194, 37, 45),
         actions: [
           IconButton(
             icon: const Icon(Icons.check),
@@ -84,8 +85,8 @@ class MapSampleState extends State<MapSample> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _goToTheLake,
-        label: const Text('To the lake!'),
-        icon: const Icon(Icons.directions_boat),
+        label: const Text('Mi ubicación!'),
+        icon: const Icon(Icons.near_me),
       ),
     );
   }

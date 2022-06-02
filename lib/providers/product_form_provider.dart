@@ -1,31 +1,34 @@
+import 'package:app_fireman/models/models.dart';
 import 'package:flutter/material.dart';
 
 
-class LoginFormProvider extends ChangeNotifier {
+class ProductFormProvider extends ChangeNotifier {
 
   GlobalKey<FormState> formKey = new GlobalKey<FormState>();
 
-  String email    = '';
-  String password = '';
-  String name = '';
+
   bool _isLoading = false;
   bool get isLoading => _isLoading;
-
-  get updateAvailability => null;
+  ProductFormProvider( );
 
   get product => null;
-  
+
+  updateAvailability( bool value ) {
+    print(value);
+    //this.product.available = value;
+    notifyListeners();
+  }
+
   set isLoading( bool value ) {
     _isLoading = value;
     notifyListeners();
   }
 
-  
   bool isValidForm() {
 
-    print(formKey.currentState?.validate());
-
-    print('$email - $password');
+    // print( product.name );
+    // print( product.price );
+    // print( product.available );
 
     return formKey.currentState?.validate() ?? false;
   }

@@ -1,3 +1,4 @@
+import 'package:app_fireman/screens/product_screen.dart';
 import 'package:app_fireman/screens/screens.dart';
 import 'package:app_fireman/services/services.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,10 @@ class AppState extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: ( _ ) => AuthService() ),
         ChangeNotifierProvider(create: ( _ ) => EmergencyTypeService() ),
-         ChangeNotifierProvider(create: ( _ ) => EmergencyLocationService() ),
+        ChangeNotifierProvider(create: ( _ ) => EmergencyLocationService() ),
+        ChangeNotifierProvider(create: ( _ ) => ProductsService() ),
+        ChangeNotifierProvider(create: ( _ ) => ConfirmationServices() ),
+        ChangeNotifierProvider(create: ( _ ) => MapServices() ),
       ],
       child: MyApp(),
     );
@@ -35,6 +39,9 @@ class MyApp extends StatelessWidget {
         'emergencyLocation': (_) => EmergencyLocation(),
         'login': (_) => LoginScreen(),
         'register':  (_) => RegisterScreen(),
+        'mapaPage': (_) => MapaPage(),
+        'emergencyImage': (_) => ProductScreen(),
+        'confirmation': (_) => ConfirmationScreen()
       },
       scaffoldMessengerKey: NotificationsService.messengerKey,
        theme: ThemeData.light().copyWith(
