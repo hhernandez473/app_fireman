@@ -9,7 +9,7 @@ android:name="android.permission.ACCESS_COARSE_LOCATION" />
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <meta-data android:name="com.google.android.geo.API_KEY"
-               android:value="AIzaSyAS78WEiHawZAV9m-2C0Q8i8Gr1CRSeBI0"/>
+               android:value=""/>
         <activity
             android:name=".MainActivity"
             android:exported="true"
